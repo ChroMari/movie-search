@@ -1,4 +1,5 @@
 import getTranslet from './API/getTranslet.js';
+import renderCard from './view/renderCard.js';
 
 const formSearch = document.getElementById('search');
 formSearch.addEventListener('submit', searchTitleMovie);
@@ -12,7 +13,7 @@ function searchTitleMovie (e) {
     MoviesTitle = getTranslet(formTitle);
   } 
 
-
+  renderCard(MoviesTitle);
 }
 
 
