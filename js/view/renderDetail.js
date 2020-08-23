@@ -9,7 +9,7 @@ export default function renderDetail () {
 function detailMovie (e) {
   if (e.target.parentElement.className == 'card') {
     const elem = e.target.parentElement;
-    const movieTitle = elem.querySelector('.card__title').textContent; //получаю название
+    const movieTitle = elem.querySelector('.info__title').textContent; //получаю название
     let resultMovie = getMovieInfo(movieTitle);
     console.log(resultMovie);
 
@@ -32,19 +32,20 @@ function getMovieInfo (title) {
 
 function renderDetailCard (mov) {
   console.log(mov);
-  let detailField = document.querySelector('.detail');
-  detailField.textContent = '';
+  let detailField = document.querySelector('.movie');
+  let cardInfo = document.querySelector('.detail');
+  if (cardInfo !== null) cardInfo.remove();
   let cardDetail = `
-    <div>
-    <div class="detail__close">x</div>
-    <img src=${mov.Poster}>
-      <div>
-        <h3>${mov.Title}</h3>
-        <p>${mov.Year}</p>
-        <p>${mov.Plot}</p>
-        <p>${mov.imdbRating}</p>
+    <div class='detail'>
+    <img class="detail__img" src=${mov.Poster}>
+      <div class="detail-info">
+        <h3 class="detail-info__title">${mov.Title}</h3>
+        <p class="detail-info__year">Год выпуска: ${mov.Year}</p>
+        <p class="detail-info__raiting">Рейтинг: ${mov.imdbRating}/10</p>
+        <p class="detail-info__plot">${mov.Plot}</p>
+        <a class="btn" href='https://www.imdb.com/title/${mov.imdbID}/' class="info__title"  target="_blank">Open</a>
       </div>
     </div>
   `;
-  detailField.insertAdjacentHTML('afterbegin', cardDetail); 
+  detailField.insertAdjacentHTML('afterend', cardDetail); 
 }

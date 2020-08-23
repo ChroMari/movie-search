@@ -16,6 +16,9 @@ function searchTitleMovie (e) {
     MoviesTitle = getTranslet(formTitle);
   } 
 
+  let cardInfo = document.querySelector('.detail');
+  if (cardInfo !== null) cardInfo.remove();
+
   let movies = renderCard(MoviesTitle);
 }
 

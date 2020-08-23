@@ -31,10 +31,12 @@ function render (movies) {
     movieArr.push(`
     <div class="card">
     <img src=${movies[i].Poster}>
-    <a href='https://www.imdb.com/title/${movies[i].imdbID}/' class="card__title">${movies[i].Title}</a>
-    <p>${movies[i].Detail.imdbRating}</p>
-    <p>${movies[i].Year}</p>
-  </div>
+    <div class="card__info">
+      <a href='https://www.imdb.com/title/${movies[i].imdbID}/' class="info__title"  target="_blank">${movies[i].Title}</a>
+      <p class="info__rating">Рейтинг: ${movies[i].Detail.imdbRating}/10</p>
+      <p class="info__year">Год выпуска: ${movies[i].Year}</p>
+    </div>
+    </div>
     `);
   }
 
