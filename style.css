@@ -182,3 +182,21 @@ main {
   margin-bottom: 10px;
   margin-top: -20px;
 }
+
+@media (max-width: 640px) {
+  .logo {
+    display: none;
+  }
+  #search {
+    width: 100%;
+  }
+  .detail {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  .search__text {
+    width: 200px;
+  }
+}
