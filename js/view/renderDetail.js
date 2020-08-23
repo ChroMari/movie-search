@@ -20,7 +20,7 @@ function getMovieInfo (title) {
   title = title.split(' ').join('+');
   
   const KEY = 'cc1ddbdd';
-  const URL = `http://www.omdbapi.com/?t=${title}&apikey=${KEY}`;
+  const URL = `https://www.omdbapi.com/?t=${title}&apikey=${KEY}`;
 
   const dt = fetch(URL)
                 .then(res => res.json())
